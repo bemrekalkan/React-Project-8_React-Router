@@ -41,8 +41,8 @@ const InstructorDetail = () => {
       <div className="container text-center">
         <h3>{inst.name}</h3>
         <img
-          className="w-50"
-          src="{`https://avatars.dicebear.com/v2/avataaars/${id}.svg`}"
+          className="w-25"
+          src={`https://avatars.dicebear.com/v2/avataaars/${id}.svg`}
           alt="instructor"
         />
         <h4>{inst.email}</h4>
