@@ -12,22 +12,14 @@ import FullStack from "./pages/FullStack";
 import Aws from "./pages/Aws";
 import PrivateRouter from "./pages/PrivateRouter";
 
-//* İc ice sayfalari gsotermek icin Nested Route kullanilabilir.
+//* Nested Route can be used to show nested pages.
 
-//? Link, NavLink ve Navigate componentleri declerative routing
-//? gerceklestirmek icin kullanilir.
-//? Ornegin: Link ve NavLink Sayfada gorulebilen, kullanciyla
-//? bir etkilesim icerisinde bulunarak yonledirme yapılan bir
-//? componentlerdir. (Nav v.b)
+//? Link, NavLink and Navigate components are used to perform declarative routing.
+//? For example: Link and NavLink are components that can be seen on the page and are directed by interacting with the user. (Nav etc.)
 
-//? Navigate sayfada gorulmeyen ve programsal olarak bir linkin
-//? bir baska linke yonledirmesi icin kullanilir. (v5 -> Redirect)
+//? Navigate is used to programmatically redirect a link to another link that is not visible on the page. (v5 --> Redirect)
 
-//* useNavigate() ise imperative routing icin elverislidir.
-//* Ornegin bir fonksiyon,event veye UseEffect icerisinde programsal
-//* olarak yonledirme yapmak icin kullanilabilir.
-
-//! LAZY-LOAD, PERFORMANS SEVİYESİNDE YAPILAN; BAŞLANGIÇTA GEREKSİZ OLAN UYGULAMALARIN TIKLANINCA/ÜZERİNE GELİNCE/... VS. YÜKLEME....
+//* useNavigate() is convenient for imperative routing. For example, it can be used to programmatically redirect within a function, event or UseEffect.
 
 function App() {
   return (
@@ -41,7 +33,7 @@ function App() {
 
           {/* NESTED ROUTE 👇 */}
           <Route path="paths" element={<Paths />}>
-            {/* Index element, nested routelarda yapılır. Path ismi olmaz.Böyle yapınca direk Fullstack sayfası görünür. 👇 */}
+            {/* Index element is used in nested routes. There is no path name. When you do this, the Fullstack page appears directly. 👇 */}
             <Route index element={<FullStack />} />
             <Route path="fullstack" element={<FullStack />} />
             <Route path="aws" element={<Aws />} />
@@ -52,7 +44,7 @@ function App() {
           </Route>
 
           {/* <Route path="*" element={<NotFound />} /> */}
-          {/* Yanlış path verildiğinde home sayfasına yönlendir! (Instructors sayfası hariç. Orada NotFound componenti çalışacak) 👇 */}
+          {/* Redirect to home page when wrong path is given! (Except the Instructors page. NotFound component will work there) 👇 */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
