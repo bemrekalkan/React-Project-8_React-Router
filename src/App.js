@@ -7,7 +7,7 @@ import NotFound from "./pages/NotFound";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import InstructorDetail from "./pages/InstructorDetail";
 import { Navigate } from "react-router-dom";
-import Paths from "./pages/Paths";
+import Paths from "./pages/Path";
 import FullStack from "./pages/FullStack";
 import Aws from "./pages/Aws";
 import PrivateRouter from "./pages/PrivateRouter";
