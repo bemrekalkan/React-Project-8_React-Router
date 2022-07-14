@@ -13,7 +13,7 @@ const InstructorDetail = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users/${id}")
+    fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
       .then((res) => {
         if (!res.ok) {
           setError(true);
